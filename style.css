@@ -1,94 +1,104 @@
-/* Genel Ayarlar */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", sans-serif;
-}
+/* Genel ayarlar */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif;}
+body {line-height:1.6; color:#333; background:#f9f9f9;}
 
-/* Üst Menü */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #002f4b;
-  color: white;
-  padding: 15px 40px;
+/* Menü */
+nav {
   position: fixed;
+  top:0; left:0;
   width: 100%;
-  top: 0;
-  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  z-index:1000;
+  box-shadow:0 2px 8px rgba(0,0,0,0.5);
 }
+nav .logo {font-size:22px; font-weight:bold; color:#f1c40f; letter-spacing:1px;}
+nav ul {list-style:none; display:flex;}
+nav ul li {margin-left:25px;}
+nav ul li a {color:#fff; text-decoration:none; font-size:16px; transition:color .3s;}
+nav ul li a:hover {color:#f1c40f;}
 
-header .logo {
-  font-size: 22px;
-  font-weight: bold;
+/* Ana görsel (header) */
+header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('assets/img/bg.jpg') no-repeat center center/cover;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
 }
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+header .content {max-width:800px; padding:20px;}
+header h1 {font-size:52px; margin-bottom:20px; font-weight:700; text-shadow:0 3px 10px rgba(0,0,0,0.7);}
+header p {font-size:22px; margin-bottom:30px; color:#ddd;}
+header a {
+  background:#f1c40f;
+  color:#000;
+  padding:14px 30px;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+  transition:all .3s;
 }
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-nav ul li a:hover {
-  color: #ff9900;
-}
-
-/* Hero Banner */
-.hero {
-  height: 100vh;
-  background: url("images/arkaplan.jpg") no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding-top: 80px;
-}
-
-.hero-text h1 {
-  font-size: 36px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.hero-text p {
-  font-size: 20px;
-  margin-top: 10px;
+header a:hover {
+  background:#fff200;
+  transform:scale(1.05);
 }
 
 /* Bölümler */
-.section {
-  padding: 80px 40px;
-  text-align: center;
+section {padding:100px 40px; text-align:center;}
+section h2 {font-size:34px; margin-bottom:20px; color:#222; position:relative;}
+section h2::after {
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#f1c40f;
+  margin:10px auto;
+  border-radius:2px;
 }
+section p {font-size:18px; max-width:900px; margin:auto; color:#444;}
 
-.section h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #002f4b;
+/* Proje kartları */
+#projeler .cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px; margin-top:40px;
 }
+.card {
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  transition:transform .3s, box-shadow .3s;
+}
+.card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+.card img {width:100%; height:200px; object-fit:cover;}
+.card h3 {margin:15px; font-size:20px; color:#222;}
+.card p {margin:0 15px 20px; color:#555;}
+
+/* İletişim */
+#iletisim p {margin:10px 0;}
+#iletisim a {color:#f1c40f; font-weight:bold; text-decoration:none;}
+#iletisim a:hover {text-decoration:underline;}
 
 /* Footer */
 footer {
-  background: #002f4b;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
 }
-header {
-  background: url('assets/img/bg.jpg') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-}
+footer a {color:#f1c40f; text-decoration:none;}
+footer a:hover {text-decoration:underline;}
